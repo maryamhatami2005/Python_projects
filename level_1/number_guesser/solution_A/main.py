@@ -13,6 +13,7 @@ def validate_input(user_num):
     return True
 
 
+
 def main():
     score = 100
     rand_num = random.randint(0,100)

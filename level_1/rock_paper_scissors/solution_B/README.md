@@ -1,5 +1,5 @@
-# Rock Paper Scissors (OOP approach)
-A simple, classic Rock-Paper-Scissors game where the player competes against the computer.
+# Rock Paper Scissors (Functional Programming approach)
+This project is a simple implementation of the classic **Rock–Paper–Scissors** game, built using functional programming principles.
 
 ## Project structure
 ```

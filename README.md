@@ -36,7 +36,3 @@ In this repository, I’ll be working on a collection of projects structured acr
   - News Information Extraction Scraper
   - Chatbot
   - Face Detection
-  
-
-## 4.  Capstone Project
-  - AI Powered Customer Service

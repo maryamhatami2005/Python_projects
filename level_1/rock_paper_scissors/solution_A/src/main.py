@@ -22,7 +22,7 @@ class RockPaperScissors:
             return self.get_player_choice()
         
     def get_computer_choice(self) -> str:
-        """ Get computer choicr randomly from choices: rock, paper, scissors."""
+        """ Get computer choice randomly from choices: rock, paper, scissors."""
         return choice(self.choices)
     
     def decide_winner(self, user_choice: str, computer_choice: str) -> str:

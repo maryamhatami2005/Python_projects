@@ -1,9 +1,10 @@
-# Password Generator(OOP approach)
+# Password Generator (Functional Programming approach)
 This project contains a password generator application written in Python. The generator can create three types of passwords:
 
 1. Random Passwords
 2. Memorable Passwords
 3. Pin Codes
+
 ## Project Structure
 ```
 ├── README.md

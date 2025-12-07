@@ -1,40 +1,4 @@
-from collections import defaultdict
-
-
-class ContactBook:
-    def __init__(self):
-        self.contacts = defaultdict(dict)
-    
-    def add_contact(self, name, phone, email=None):
-        if name in self.contacts.keys() :
-            print("Contact Already Exist")
-            return
-        self.contacts[name]['phone'] = phone
-        self.contacts[name]['email'] = email
-
-    def view_contacts(self):
-        for name, info in self.contacts.items():
-            print(f"Name: {name}")
-            print(f"Phone: {info['phone']}")
-            print(f"Email: {info['email']}")
-            print("_" * 50)
-    
-    def delete_contact(self, name):
-        if name in self.contacts:
-            del self.contacts[name]
-            print("Contact deleted successfully")
-        else:
-            print("Contact not found")
-    
-    def update_contact(self, name, phone = None, email = None):
-        if name in self.contacts:
-            if phone:
-                self.contacts[name]['phone'] = phone
-            if email:
-                self.contacts[name]['email'] = email
-            print("Contact updated successfully")
-        else:
-            print("Contact not found")
+from contact_book import ContactBook
     
 
 if __name__ == "__main__":

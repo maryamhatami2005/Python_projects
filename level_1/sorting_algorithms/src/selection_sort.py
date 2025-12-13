@@ -10,8 +10,8 @@ def selection_sort_classic(list:List[int]) -> List[int]:
     for i in range(len(list)):
         min_idx = i
         for j in range(i + 1, len(list)):
-            if list[i] < list[min_idx]:
-                min_idx = i
+            if list[j] < list[min_idx]:
+                min_idx = j
             list[i], list[min_idx] = list[min_idx], list[i]
     return list
 

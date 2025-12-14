@@ -13,7 +13,6 @@ In this repository, I’ll be working on a collection of projects structured acr
   - Monty Hall Simulation Problem
   - Tic Tac Toe
   - Sorting Algorithms
-  - Directory Tree Generator
   - Contact Book
   
 

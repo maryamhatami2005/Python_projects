@@ -8,6 +8,7 @@ def measure_time_complexity(func, list):
     end_time = time.time()
     return end_time - start_time
 
+
 def measure_space_complexity(func, list):
     start_memory = sys.getsizeof(list)
     func(list)

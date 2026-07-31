@@ -1,6 +1,6 @@
 import streamlit as st
 from constants import CURRENCIES
-from currency_conventor import get_exchange_rate, conventor_currency
+from currency_converter import get_exchange_rate, converter_currency
 
 st.image("/home/mary/project_based_python/projects/level_2/currency_conventor/src/Money Currency Pixel Pattern Design Vector Download.jpg", width = 1500)
 st.title(":dollar: Currency Conventor")
@@ -16,7 +16,7 @@ if amount > 0 and base_currency and target_currency:
     exchange_rate = get_exchange_rate(base_currency, target_currency)
 
     if exchange_rate:
-        converted_amount = conventor_currency(amount, exchange_rate)
+        converted_amount = converter_currency(amount, exchange_rate)
         st.success(f"✅ Exchange Rate: {exchange_rate:.3f}")
         col1, col2, col3 = st.columns(3)
         col1.metric(label="Base Currency", value = f"{amount} {base_currency}")

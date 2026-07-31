@@ -14,7 +14,7 @@ def get_exchange_rate(base_currency, target_currency):
     return response.json()['rates'][target_currency]
 
 
-def conventor_currency(base_currency_amount, exchange_rate):
+def converter_currency(base_currency_amount, exchange_rate):
     return base_currency_amount * exchange_rate
 
 if __name__=="__main__":
@@ -22,5 +22,5 @@ if __name__=="__main__":
     target = input("Enter target currency: ")
     amount = float(input("Enter amount: "))
     exchange_rate = get_exchange_rate(base, target)
-    converted_amount = conventor_currency(amount, exchange_rate)
+    converted_amount = converter_currency(amount, exchange_rate)
     print(f"{amount} {base} is {converted_amount} {target}")

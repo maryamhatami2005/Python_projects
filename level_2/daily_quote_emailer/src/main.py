@@ -9,14 +9,15 @@ sender = "maryhatami2005@gmail.com"
 password = os.getenv("PASSWORD")
 
 csv_file_path = "recipients.csv"
+quotes_file_path = "quotes.txt"
+
 
 def load_quotes(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         return [line.strip() for line in file if line.strip()]
 
-
-quotes_file_path = "quotes.txt"
 quotes = load_quotes(quotes_file_path)
+
 
 def send_email(recipient_name, recipient_email, quote):
     sbj = "Your Daily Inspirational quote"
@@ -41,5 +42,24 @@ def send_email(recipient_name, recipient_email, quote):
 
     except Exception as e:
         print(f"Failed to send email to {recipient_name} ({recipient_email}). Error: {e}")
+
+
+if __name__ == "__main__":
+
+    quotes = load_quotes(quotes_file_path)
+
+    with open(csv_file_path, mode="r", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+
+        for row in reader:
+            recipient_name = row["name"]
+            recipient_email = row["email"]
+
+            quote_of_the_day = random.choice(quotes)
+            send_email(
+                recipient_name,
+                recipient_email,
+                quote_of_the_day
+            )
 
 

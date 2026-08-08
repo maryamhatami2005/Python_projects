@@ -7,7 +7,6 @@ In this repository, I’ll be working on a collection of projects structured acr
   - Number Guesser 
   - Rock Paper Scissors
   - Password Generator
-  - Streamlit Dashboard
   - Happy Numbers
   - Number to words
   - Monty Hall Simulation Problem
@@ -21,11 +20,8 @@ In this repository, I’ll be working on a collection of projects structured acr
   - Sending Email
   - Site Connectivity Checker
   - Wordle
-  - Blogging Platform
   - Youtube Downloader
   - Currency Converter
-  - Resize Image
-  - Personal Homepage with Streamlit
   - Gender and Race Prediction from Name
 
 

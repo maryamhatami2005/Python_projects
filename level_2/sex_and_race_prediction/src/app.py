@@ -1,13 +1,15 @@
 import streamlit as st
-from name_predictor import name_input
+from name_predictor import process_name_input
+from image_predictor import process_image_input
+
 
 if __name__ == "__main__":
-    st.title(f"Gender and Race Prediction")
+    st.image("image.png")
+    st.title("Gender and Race Prediction")
 
-    input_type= st.radio("Choose input type:" ,  ("Name", "Image"))
+    input_type = st.radio("Choose input type:", ("Name", "Image"))
 
     if input_type == "Name":
-        name_input
-
+        process_name_input()
     else:
-        pass
+        process_image_input()

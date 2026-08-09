@@ -4,7 +4,6 @@ from image_predictor import process_image_input
 
 
 if __name__ == "__main__":
-    st.image("image.png")
     st.title("Gender and Race Prediction")
 
     input_type = st.radio("Choose input type:", ("Name", "Image"))

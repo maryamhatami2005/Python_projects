@@ -1,5 +1,5 @@
 import streamlit as st
-from name_predictor import process_name_input
+from name_predictor import name_input
 from image_predictor import process_image_input
 
 

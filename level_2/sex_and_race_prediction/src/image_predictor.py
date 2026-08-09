@@ -7,13 +7,13 @@ from utils import display_prediction
 def predict_sex_and_race_from_image(img_path):
 
     try:
-        faces= DeepFace.analyze(img_path = "img4.jpg", actions = ['gender', 'race'])
+        faces= DeepFace.analyze(img_path = img_path, actions = ['gender', 'race'])
         if faces:
             return faces[0].get("Dominant_gender", "Unknow"), faces[0].get("Dominant_race", "Unknown")
         else:
             return "No face detected", "No face detected"
 
-    except:
+    except Exception as e:
         return f"Error: {str(e)}", f"Error: {str(e)}"
 
 

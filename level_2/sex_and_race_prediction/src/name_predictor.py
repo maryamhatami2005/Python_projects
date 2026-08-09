@@ -11,7 +11,7 @@ def load_names_dataset():
 nd =  load_names_dataset()
 
 def predict_sex_and_race_from_name(name):
-    result = NameWrapper(nd.search(name)).describe.strip(',')
+    result = NameWrapper(nd.search(name)).describe.split(',')
 
     if len(result) > 0:
         sex = result[0]
@@ -30,7 +30,7 @@ def predict_sex_and_race_from_name(name):
     return sex, country
 
 
-def name_input():
+def process_name_input():
     name = st.text_input(f"Enter a name: ")
     if name:
         with st.spinner('Predicting...'):

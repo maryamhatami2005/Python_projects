@@ -1,0 +1,10 @@
+streamlit
+deepface
+tensorflow
+keras
+numpy
+opencv-python
+pandas
+Pillow
+names-dataset
+countryflag

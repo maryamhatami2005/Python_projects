@@ -1,6 +1,7 @@
 import os
 import yagmail
 
+from loguru import logger
 
 def send_email(to, subject, contents, attachments=None):
     """
@@ -35,13 +36,14 @@ def send_email(to, subject, contents, attachments=None):
             attachments=attachments
         )
 
-        print("Email sent successfully")
-        return True
+        logger.success("Email sent successfully")
 
     except Exception as e:
-        print(f"An error occurred while sending the Email: {str(e)}")
+        logger.error(f"An error occurred while sending the Email: {str(e)}")
         return False
-
+    else:
+        return True
+    
     finally:
         # close the connection
         if "yag" in locals():

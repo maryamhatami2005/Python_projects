@@ -33,7 +33,7 @@ class DatabaseManager:
         }, doc_ids=profile_id)
 
     def delete_profile(self, profile_id):
-        self.profiles.remove(doc_ids=profile_id)
+        self.profiles.remove(doc_ids=[profile_id])
 
     def get_all_profiles(self):
         return self.profiles.all()
@@ -55,7 +55,7 @@ class DatabaseManager:
         }, doc_ids=template_id)
 
     def delete_template(self, template_id):
-        self.templates.remove(doc_ids=template_id)
+        self.templates.remove(doc_ids=[template_id])
 
     def get_all_templates(self):
         return self.templates.all()
@@ -80,7 +80,7 @@ class DatabaseManager:
         }, doc_ids=[reminder_id])
 
     def delete_reminder(self, reminder_id):
-        self.reminders.remove(doc_ids=reminder_id)
+        self.reminders.remove(doc_ids=[reminder_id])
 
     def get_all_reminders(self):
         return self.reminders.all()
@@ -101,7 +101,7 @@ class DatabaseManager:
         }, doc_ids=schedule_id)
 
     def delete_schedule(self, schedule_id):
-        self.schedules.remove(doc_ids=schedule_id)
+        self.schedules.remove(doc_ids=[schedule_id])
 
     def get_all_schedules(self):
         return self.schedules.all()
@@ -142,7 +142,7 @@ class DatabaseManager:
     def search_sent_email(self, query):
         Email = Query()
         return self.sent_emails.search(
-            (Email.recipients.search(query))
-            (Email.subject.search(query))
-            (Email.body.search(query))
+           (Email.recipients.search(query))
+           |(Email.subject.search(query))
+            |(Email.body.search(query))
         )

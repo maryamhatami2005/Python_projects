@@ -52,7 +52,7 @@ class DatabaseManager:
         self.templates.update({
             'name': name,
             'body': body
-        }, doc_ids=template_id)
+        }, doc_ids=[template_id])
 
     def delete_template(self, template_id):
         self.templates.remove(doc_ids=[template_id])
@@ -98,7 +98,7 @@ class DatabaseManager:
     def update_schedule(self, schedule_id, scheduled_date):
         self.schedules.update({
             'scheduled_date': scheduled_date.isoformat()
-        }, doc_ids=schedule_id)
+        }, doc_ids=[schedule_id])
 
     def delete_schedule(self, schedule_id):
         self.schedules.remove(doc_ids=[schedule_id])

@@ -2,6 +2,7 @@ import streamlit as st
 from utils.db import DatabaseManager
 
 # Initialize database
+
 db = DatabaseManager()
 
 st.title("📄 Email Templates")

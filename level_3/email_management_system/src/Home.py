@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Email Management System", page_icon="✉️", layout="wide")
+st.image("/home/mary/project_based_python/projects/level_3/email_management_system/src/utils/banner.jpg")
 
 st.title("✉️ Email Management System (EMS)")
 st.subheader("Welcome to your personal automated email manager dashboard!")

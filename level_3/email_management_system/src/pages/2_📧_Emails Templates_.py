@@ -1,4 +1,5 @@
 import streamlit as st
+
 from utils.db import DatabaseManager
 
 # Initialize database
@@ -15,13 +16,13 @@ with st.form("template_form", clear_on_submit=True):
 
     template_name = st.text_input(
         "Template Name",
-        placeholder="e.g., Job Application"
+        placeholder="e.g., Job Application",
     )
 
     template_body = st.text_area(
         "Email Body",
         placeholder="Dear {title} {name},\n\nI am writing to...",
-        height=200
+        height=200,
     )
 
     submit_button = st.form_submit_button("Add Template")
@@ -32,18 +33,18 @@ with st.form("template_form", clear_on_submit=True):
 
             db.add_template(
                 template_name.strip(),
-                template_body.strip()
+                template_body.strip(),
             )
 
             st.success(
-                f"Template '{template_name}' added successfully!"
+                f"Template '{template_name}' added successfully!",
             )
 
             st.rerun()
 
         else:
             st.error(
-                "Please provide both a title and a body for the template."
+                "Please provide both a title and a body for the template.",
             )
 
 
@@ -60,7 +61,7 @@ templates = db.get_all_templates()
 if not templates:
 
     st.info(
-        "No templates found. Create your first one above!"
+        "No templates found. Create your first one above!",
     )
 
 else:
@@ -78,18 +79,18 @@ else:
                 value=template_body,
                 height=200,
                 disabled=True,
-                key=f"body_{template_id}"
+                key=f"body_{template_id}",
             )
 
             if st.button(
                 "Delete",
-                key=f"del_{template_id}"
+                key=f"del_{template_id}",
             ):
 
                 db.delete_template(template_id)
 
                 st.success(
-                    f"Template '{template_name}' deleted."
+                    f"Template '{template_name}' deleted.",
                 )
 
                 st.rerun()

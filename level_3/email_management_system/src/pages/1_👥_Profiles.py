@@ -1,6 +1,6 @@
 import streamlit as st
-from utils.db import DatabaseManager
 
+from utils.db import DatabaseManager
 
 db = DatabaseManager()
 
@@ -25,7 +25,7 @@ if st.button("Add Profile"):
             name=name,
             email=email,
             title=title,
-            profession=profession
+            profession=profession,
         )
 
         st.success("Profile added successfully.")
@@ -57,7 +57,7 @@ else:
 
             if st.button(
                 "Delete",
-                key=f"delete_{profile.doc_id}"
+                key=f"delete_{profile.doc_id}",
             ):
                 db.delete_profile(profile.doc_id)
 

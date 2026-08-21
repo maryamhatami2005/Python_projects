@@ -4,7 +4,7 @@ from utils.db import DatabaseManager
 
 db = DatabaseManager()
 
-st.title("User Profile")
+st.title(":bust_in_silhouette: User Profile")
 
 
 # Get existing profile

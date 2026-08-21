@@ -5,7 +5,7 @@ from utils.db import DatabaseManager
 db = DatabaseManager()
 
 
-st.title("👤 Profiles")
+st.title(":busts_in_silhouette: Profiles")
 
 st.header("Add Profile")
 

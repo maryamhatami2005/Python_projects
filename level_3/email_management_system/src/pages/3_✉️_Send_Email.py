@@ -1,4 +1,7 @@
+from datetime import datetime
+
 import streamlit as st
+import yagmail
 
 from utils.db import DatabaseManager
 
@@ -269,11 +272,44 @@ with send_col:
             st.error("Email body cannot be empty.")
 
         else:
-            # yagmail will go here.
+            try:
+                # Get the email content
+                email_body = st.session_state.email_body.strip()
+                email_subject = st.session_state.email_subject.strip()
 
-            st.success(
-                f"Email prepared for {profile['email']}.",
-            )
+                # Add signature if enabled
+                if add_signature_enabled:
+                    email_body = add_signature(email_body)
+
+                # Connect to Gmail
+                yag = yagmail.SMTP(
+                    user=st.secrets["EMAIL_ADDRESS"],
+                    password=st.secrets["EMAIL_APP_PASSWORD"],
+                )
+
+                # Send the actual email
+                yag.send(
+                    to=profile["email"],
+                    subject=email_subject,
+                    contents=email_body,
+                )
+
+                # Save the successfully sent email to TinyDB
+                db.add_sent_email(
+                    recipients=profile["email"],
+                    subject=email_subject,
+                    body=email_body,
+                    sent_date=datetime.now(),
+                )
+
+                st.success(
+                    f"Email sent successfully to {profile['email']}.",
+                )
+
+            except Exception as e:
+                st.error(
+                    f"Failed to send email: {e}",
+                )
 
 
 with schedule_col:

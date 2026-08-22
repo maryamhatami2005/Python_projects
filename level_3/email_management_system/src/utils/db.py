@@ -30,7 +30,7 @@ class DatabaseManager:
             "email": email,
             "title": title,
             "profession": profession,
-        }, doc_ids=profile_id)
+        }, doc_ids=[profile_id])
 
     def delete_profile(self, profile_id):
         self.profiles.remove(doc_ids=[profile_id])
